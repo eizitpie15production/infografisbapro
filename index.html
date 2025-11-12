@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis Bahasa Pemrograman</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Kumpulan Lengkap Kategori Bahasa Pemrograman</h1>
+
+    <div class="kategori-container">
+
+        <div class="kategori-kartu" id="frontend-dev">
+            <h2>1. Web Development (Frontend) 🌐</h2>
+            <ul>
+                <li><strong>HTML:</strong> Kerangka & Struktur Konten</li>
+                <li><strong>CSS:</strong> Desain & Tampilan Visual</li>
+                <li><strong>JavaScript:</strong> Interaktivitas & Logika Klien</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Pikirkan halaman ini. <strong>HTML</strong> adalah kerangka yang menyusun "kartu" ini dan menempatkan teks di dalamnya. <strong>CSS</strong> adalah yang memberi warna latar belakang biru tua, mengatur tata letak kartu, dan memberi warna judul. Jika kita ingin menambahkan tombol yang memunculkan pop-up saat diklik, itu adalah tugas <strong>JavaScript</strong>.
+            </p>
+            <pre class="contoh-kode"><code>
+console.log("Hello, World!");
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-frontend">Selengkapnya</button>
+        </div>
+
+        <div class="kategori-kartu" id="data-science">
+            <h2>2. Data Science & AI 🧠</h2>
+            <ul>
+                <li><strong>Python:</strong> Analisis Data & Machine Learning (ML)</li>
+                <li><strong>R:</strong> Pemodelan Statistik & Visualisasi</li>
+                <li><strong>SQL:</strong> Manajemen Data (Database)</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Bayangkan sebuah perusahaan ingin tahu produk apa yang paling laku. Analis akan menggunakan <strong>SQL</strong> untuk mengambil data penjualan mentah dari database. Kemudian, mereka menggunakan <strong>Python</strong> (dengan library Pandas) untuk membersihkan dan menganalisis data itu. Terakhir, mereka mungkin menggunakan <strong>R</strong> atau Python (Matplotlib) untuk membuat grafik yang menunjukkan tren penjualan.
+            </p>
+            <pre class="contoh-kode"><code>
+# "Hello, World!" di Python
+print("Hello, World!")
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-data-science">Selengkapnya</button>
+        </div>
+
+        <div class="kategori-kartu" id="mobile-app">
+            <h2>3. Aplikasi Mobile 📱</h2>
+            <ul>
+                <li><strong>Kotlin:</strong> Pengembangan Aplikasi Android Native</li>
+                <li><strong>Swift:</strong> Pengembangan Aplikasi iOS Native</li>
+                <li><strong>Dart (Flutter):</strong> Pengembangan Cross-Platform</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Saat Anda membuka aplikasi Gojek di iPhone, Anda melihat aplikasi yang dibuat dengan <strong>Swift</strong> (Native iOS). Jika Anda membukanya di ponsel Samsung, itu dibuat dengan <strong>Kotlin</strong> (Native Android). Perusahaan lain mungkin menggunakan <strong>Dart</strong> (dengan framework Flutter) untuk menulis kode satu kali yang bisa berjalan di kedua platform sekaligus untuk menghemat waktu.
+            </p>
+            <pre class="contoh-kode"><code>
+// "Hello, World!" di Kotlin
+fun main() {
+    println("Hello, World!")
+}
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-mobile">Selengkapnya</button>
+        </div>
+
+        <div class="kategori-kartu" id="game-dev">
+            <h2>4. Game Development & Kinerja 🎮</h2>
+            <ul>
+                <li><strong>C++:</strong> Mesin Game, Grafis 3D, Performa</li>
+                <li><strong>C#:</strong> Logika Game Engine (Unity)</li>
+                <li><strong>Lua:</strong> Skriping & Kustomisasi</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Dalam game besar seperti *Cyberpunk 2077*, mesin game inti (engine) yang menangani grafis 3D dan fisika ditulis dalam <strong>C++</strong> karena butuh kecepatan ekstrem. Game populer seperti *Genshin Impact* dibuat dengan Unity, di mana logikanya ("jika pemain menekan A, lompat") ditulis dalam <strong>C#</strong>. <strong>Lua</strong> sering digunakan sebagai bahasa skrip ringan untuk *modding* atau mendesain level.
+            </p>
+            <pre class="contoh-kode"><code>
+// "Hello, World!" di C#
+using System;
+Console.WriteLine("Hello, World!");
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-game">Selengkapnya</button>
+        </div>
+
+        <div class="kategori-kartu" id="system-prog">
+            <h2>5. Pemrograman Sistem & Hardware ⚙️</h2>
+            <ul>
+                <li><strong>C:</strong> Sistem Operasi (OS), Driver, Embedded</li>
+                <li><strong>Rust:</strong> Pemrograman Sistem Modern & Aman</li>
+                <li><strong>Assembly:</strong> Bahasa Tingkat Sangat Rendah (CPU)</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Inti (kernel) dari sistem operasi Windows, macOS, dan Linux semuanya dibangun menggunakan <strong>C</strong>. Saat Anda mencolokkan mouse USB, 'driver' yang membuatnya berfungsi mungkin ditulis dalam <strong>C</strong>. <strong>Rust</strong> adalah alternatif modern yang sedang naik daun untuk tugas-tugas ini karena lebih aman. <strong>Assembly</strong> adalah instruksi langsung ke CPU, digunakan untuk tugas yang sangat kritis.
+            </p>
+            <pre class="contoh-kode"><code>
+/* "Hello, World!" di C */
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-sistem">Selengkapnya</button>
+        </div>
+
+        <div class="kategori-kartu" id="enterprise-backend">
+            <h2>6. Enterprise & Backend Skala Besar 🏦</h2>
+            <ul>
+                <li><strong>Java:</strong> Aplikasi Enterprise, Server Backend</li>
+                <li><strong>Go (Golang):</strong> Microservices & Networking</li>
+                <li><strong>PHP:</strong> Backend Web (Sisi Server Konten)</li>
+            </ul>
+            <p class="penjelasan">
+                <strong>Contoh Nyata:</strong> Saat Anda login ke aplikasi mobile banking, permintaan Anda kemungkinan besar ditangani oleh server *backend* yang stabil dan aman yang ditulis dalam <strong>Java</strong>. Saat Anda menonton Netflix, sistem *microservice* yang sangat cepat yang mengambil daftar film untuk Anda mungkin ditulis dalam <strong>Go</strong>. Dan, sebagian besar web (termasuk Wikipedia dan WordPress) berjalan di atas <strong>PHP</strong>.
+            </p>
+            <pre class="contoh-kode"><code>
+// "Hello, World!" di Go
+package main
+import "fmt"
+func main() {
+    fmt.Println("Hello, World!")
+}
+            </code></pre>
+            <button class="info-button" data-modal-target="modal-enterprise">Selengkapnya</button>
+        </div>
+
+    </div>
+
+    
+    <div id="modal-frontend" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Web Development (Frontend) 🌐</h2>
+            <p>Frontend adalah bagian dari situs web atau aplikasi yang berinteraksi langsung dengan pengguna. Bahasa utamanya adalah HTML (struktur), CSS (gaya), dan JavaScript (interaktivitas). Framework populer termasuk React, Angular, dan Vue.js. Fokus utamanya adalah pengalaman pengguna (UX) dan antarmuka pengguna (UI) yang menarik dan responsif.</p>
+            <h3>Framework Populer:</h3>
+            <ul>
+                <li><strong>React:</strong> Library JavaScript untuk membangun antarmuka pengguna. Dikembangkan oleh Facebook.</li>
+                <li><strong>Angular:</strong> Platform pengembangan aplikasi web yang dikelola oleh Google.</li>
+                <li><strong>Vue.js:</strong> Framework progresif JavaScript yang mudah dipelajari.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-data-science" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Data Science & AI 🧠</h2>
+            <p>Data Science adalah bidang interdisipliner yang menggunakan metode ilmiah, proses, algoritma, dan sistem untuk mengekstrak pengetahuan dan wawasan dari data dalam berbagai bentuk. AI melibatkan pembuatan mesin yang dapat berpikir dan belajar seperti manusia. Python dan R adalah pilihan utama untuk analisis, visualisasi, dan pembangunan model Machine Learning.</p>
+            <h3>Library / Tools Populer:</h3>
+            <ul>
+                <li><strong>Python (Pandas, NumPy, SciKit-learn, TensorFlow, Keras):</strong> Serbaguna untuk data manipulation, ML, dan Deep Learning.</li>
+                <li><strong>R (ggplot2, Dplyr):</strong> Kuat untuk analisis statistik dan visualisasi data.</li>
+                <li><strong>SQL:</strong> Penting untuk mengelola dan query database besar.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-mobile" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Aplikasi Mobile 📱</h2>
+            <p>Pengembangan aplikasi mobile melibatkan pembuatan perangkat lunak untuk perangkat bergerak seperti smartphone dan tablet. Ada dua pendekatan utama: native (mengembangkan aplikasi spesifik untuk iOS atau Android) dan cross-platform (menulis kode sekali yang dapat berjalan di kedua platform).</p>
+            <h3>Teknologi Populer:</h3>
+            <ul>
+                <li><strong>Kotlin (Android Native):</strong> Bahasa modern dan disukai Google untuk pengembangan Android.</li>
+                <li><strong>Swift (iOS Native):</strong> Bahasa utama untuk pengembangan aplikasi Apple.</li>
+                <li><strong>Dart (Flutter):</strong> Framework UI cross-platform dari Google untuk membangun aplikasi secara native di mobile, web, dan desktop dari satu codebase.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-game" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Game Development & Kinerja 🎮</h2>
+            <p>Pengembangan game adalah proses menciptakan video game. Ini membutuhkan kombinasi seni, desain, pemrograman, dan penceritaan. Bahasa yang digunakan seringkali fokus pada kinerja tinggi untuk grafis yang kompleks dan simulasi fisika yang realistis.</p>
+            <h3>Teknologi & Engine Populer:</h3>
+            <ul>
+                <li><strong>C++ (Unreal Engine):</strong> Pilihan utama untuk engine game performa tinggi dan game AAA.</li>
+                <li><strong>C# (Unity):</strong> Bahasa scripting utama untuk Unity, engine game cross-platform yang sangat populer.</li>
+                <li><strong>Lua:</strong> Bahasa scripting ringan yang sering digunakan untuk modding dan kustomisasi dalam game (misalnya, Roblox).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-sistem" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Pemrograman Sistem & Hardware ⚙️</h2>
+            <p>Pemrograman sistem adalah pengembangan perangkat lunak tingkat rendah yang berinteraksi langsung dengan hardware komputer dan sistem operasi. Ini krusial untuk membuat sistem operasi, driver perangkat, dan sistem embedded yang efisien dan andal.</p>
+            <h3>Bahasa & Penggunaan:</h3>
+            <ul>
+                <li><strong>C:</strong> Bahasa dasar untuk sistem operasi (Linux, Windows kernel), mikrokontroler, dan driver.</li>
+                <li><strong>Rust:</strong> Bahasa modern yang berfokus pada keamanan memori dan konkurensi, ideal untuk sistem performa tinggi.</li>
+                <li><strong>Assembly:</strong> Bahasa tingkat terendah yang berinteraksi langsung dengan instruksi CPU, digunakan untuk optimasi kritis atau bootloader.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-enterprise" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Enterprise & Backend Skala Besar 🏦</h2>
+            <p>Backend development berfokus pada sisi server dari aplikasi web, mengelola database, logika aplikasi, otentikasi, dan komunikasi API. Bahasa-bahasa ini dirancang untuk skalabilitas, keamanan, dan keandalan dalam lingkungan bisnis yang kompleks.</p>
+            <h3>Teknologi Populer:</h3>
+            <ul>
+                <li><strong>Java (Spring Boot):</strong> Dominan untuk aplikasi enterprise besar, sistem perbankan, dan server backend.</li>
+                <li><strong>Go (Golang):</strong> Efisien untuk microservices, jaringan, dan sistem konkurensi tinggi.</li>
+                <li><strong>PHP (Laravel, WordPress):</strong> Sangat populer untuk pengembangan web server-side, mulai dari blog hingga e-commerce.</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2025 InfoGrafis Seputar Bahasa Pemrograman oleh 
+            <a href="https://infomedsoseizitpie.carrd.co/" target="_blank" rel="noopener noreferrer">Eizitpie Production</a>.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

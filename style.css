@@ -1,0 +1,390 @@
+/* ========================================
+   GLOBAL STYLES & FONT
+   ======================================== */
+:root {
+    /* Palette Warna Modern Baru */
+    --color-primary-dark: #121228; /* Sangat gelap, mendekati hitam */
+    --color-secondary-dark: #1F2847; /* Biru gelap keabu-abuan */
+    --color-card-bg: #2B355A; /* Latar belakang kartu yang lebih menonjol */
+    --color-border: #4A5B8A; /* Border yang lebih jelas */
+    --color-text-light: #EAEAEA; /* Teks terang */
+    --color-text-muted: #B0BACC; /* Teks agak pudar */
+    --color-accent-blue: #5AC8FF; /* Biru aksen cerah */
+    --color-accent-orange: #FFAC58; /* Oranye aksen hangat */
+    --color-code-bg: #1A1A32; /* Latar belakang kode lebih gelap */
+    --color-code-text: #A0FFA0; /* Teks kode hijau cerah */
+}
+
+body {
+    background-image: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+    background-color: var(--color-primary-dark); /* Cadangan */
+    min-height: 100vh;
+    color: var(--color-text-light);
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Scroll halus untuk navigasi di masa depan */
+}
+
+/* ========================================
+   HEADINGS & TYPOGRAPHY
+   ======================================== */
+h1 {
+    text-align: center;
+    color: var(--color-text-light);
+    margin: 40px auto 60px auto; /* Margin lebih besar untuk judul */
+    font-weight: 700;
+    font-size: 3em; /* Ukuran font lebih besar */
+    max-width: 900px;
+    line-height: 1.2;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Sedikit bayangan pada judul */
+}
+
+h2 {
+    color: var(--color-accent-blue);
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 15px; /* Padding lebih besar */
+    font-weight: 700;
+    font-size: 1.8em; /* Ukuran H2 lebih besar */
+    letter-spacing: 0.5px; /* Sedikit spasi antar huruf */
+}
+
+h3 {
+    color: var(--color-accent-orange); /* H3 menggunakan warna oranye aksen */
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+ul {
+    list-style-type: none; /* Hilangkan bullet default */
+    padding-left: 0;
+}
+
+li {
+    position: relative;
+    padding-left: 25px; /* Ruang untuk custom bullet */
+    margin-bottom: 12px;
+    color: var(--color-text-muted); /* Warna teks list item */
+}
+
+li::before {
+    content: '▶'; /* Custom bullet point */
+    color: var(--color-accent-blue);
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    line-height: 1.6; /* Pastikan bullet sejajar dengan teks */
+}
+
+li strong {
+    color: var(--color-text-light);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+p.penjelasan {
+    font-size: 0.95em;
+    color: var(--color-text-muted);
+    margin-top: 25px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px; /* Padding lebih besar */
+    line-height: 1.7;
+}
+
+p.penjelasan strong {
+    color: var(--color-accent-orange);
+    font-weight: 700;
+}
+
+/* ========================================
+   KATEGORI CONTAINER & KARTU
+   ======================================== */
+.kategori-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Jarak antar kartu lebih besar */
+    padding-bottom: 50px;
+    max-width: 1200px; /* Batasi lebar container */
+    margin: 0 auto; /* Tengah container */
+}
+
+.kategori-kartu {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px; /* Sudut lebih membulat */
+    padding: 30px; /* Padding lebih besar */
+    flex-basis: 320px;
+    flex-grow: 1;
+    max-width: 400px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Bayangan lebih halus */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Transisi lebih halus */
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+
+    /* Gaya awal untuk animasi muncul (Scroll-Driven) */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* Kelas yang ditambahkan JS saat elemen terlihat */
+.kategori-kartu.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.kategori-kartu:hover {
+    /* Efek hover ini akan diganti oleh JS saat kursor bergerak di atasnya */
+    transform: translateY(-10px) scale(1.03); /* Lebih naik dan membesar */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6); /* Bayangan lebih dalam */
+}
+
+/* ========================================
+   KODE BLOK
+   ======================================== */
+.contoh-kode {
+    background-color: var(--color-code-bg);
+    border-radius: 8px; /* Sudut lebih membulat */
+    padding: 20px;
+    margin-top: 25px;
+    font-family: "Fira Code", "Courier New", Courier, monospace;
+    font-size: 0.9em;
+    color: var(--color-code-text);
+    overflow-x: auto;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan inset */
+}
+
+/* ========================================
+   TOMBOL INTERAKTIF
+   ======================================== */
+.info-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0 auto;
+    padding: 12px 25px; /* Padding lebih besar */
+    background-image: linear-gradient(45deg, var(--color-accent-blue), #21a1f1); /* Gradien pada tombol */
+    color: var(--color-primary-dark); /* Warna teks gelap */
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    letter-spacing: 0.5px;
+}
+
+.info-button:hover {
+    background-image: linear-gradient(45deg, #21a1f1, var(--color-accent-blue)); /* Ubah gradien saat hover */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    color: #ffffff; /* Teks putih saat hover */
+}
+
+/* ========================================
+   MODAL (POP-UP)
+   ======================================== */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Scroll vertikal untuk modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang lebih gelap */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-card-bg);
+    padding: 35px; /* Padding lebih besar */
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    max-width: 650px; /* Lebar modal sedikit lebih besar */
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: translateY(-70px); /* Mulai lebih jauh ke atas */
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transisi lebih kompleks */
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content h2 {
+    color: var(--color-accent-blue);
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.modal-content p {
+    color: var(--color-text-muted);
+    margin-bottom: 15px;
+    font-size: 1.0em;
+    line-height: 1.7;
+}
+
+.modal-content h3 {
+    color: var(--color-accent-orange);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.modal-content ul {
+    list-style-type: disc; /* Menggunakan bullet default dalam modal */
+    margin-left: 20px;
+    color: var(--color-text-muted);
+}
+
+.modal-content ul li {
+    margin-bottom: 10px;
+}
+
+.modal-content ul li strong {
+    color: var(--color-text-light);
+}
+
+.close-button {
+    color: var(--color-text-muted);
+    font-size: 32px; /* Ukuran tombol close lebih besar */
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-accent-orange);
+    transform: rotate(90deg); /* Animasi putar saat hover */
+}
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+.site-footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px; /* Padding lebih besar */
+    margin-top: 80px; /* Jarak lebih jauh dari konten */
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-primary-dark);
+}
+
+.site-footer p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.site-footer a {
+    color: var(--color-accent-blue);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: var(--color-accent-orange); /* Ubah warna saat hover */
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+    }
+    .kategori-container {
+        gap: 25px;
+    }
+    .kategori-kartu {
+        flex-basis: 45%; /* Dua kolom pada tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    .kategori-kartu {
+        flex-basis: 90%;
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 25px;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+    .close-button {
+        font-size: 28px;
+        right: 20px;
+    }
+    .site-footer {
+        margin-top: 60px;
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .kategori-kartu {
+        padding: 20px;
+    }
+    .info-button {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .close-button {
+        font-size: 26px;
+        top: 8px;
+        right: 15px;
+    }
+}
