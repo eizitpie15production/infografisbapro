@@ -8,23 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     kategoriKartu.forEach(kartu => {
         kartu.addEventListener('mousemove', (e) => {
             const rect = kartu.getBoundingClientRect();
-            const x = e.clientX - rect.left; // Posisi X relatif terhadap kartu
-            const y = e.clientY - rect.top;  // Posisi Y relatif terhadap kartu
-
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-
-            // Sesuaikan faktor rotasi untuk kontrol yang lebih halus
             const rotateX = ((y - centerY) / centerY) * 12; // Rotasi maks 12 derajat
             const rotateY = ((x - centerX) / centerX) * -12; // Rotasi maks 12 derajat
 
-            // Saat mouse bergerak di atas, terapkan efek 3D tilt + efek hover CSS
             kartu.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
         });
 
         kartu.addEventListener('mouseleave', () => {
-            // Saat mouse keluar, kembalikan rotasi ke 0, tapi pertahankan efek hover CSS
-            // Transisi di CSS akan membuatnya kembali dengan mulus
+            // Mengembalikan ke posisi hover CSS
             kartu.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-10px) scale(1.03)`;
         });
     });
@@ -55,28 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // ------------------------------------------
     // FITUR 3: Modal (Jendela Pop-up Informasi)
     // ------------------------------------------
-    const infoButtons = document.querySelectorAll('.info-button');
+    
+    // Menemukan SEMUA tombol yang memiliki atribut [data-modal-target]
+    const modalButtons = document.querySelectorAll('[data-modal-target]');
     const closeButtons = document.querySelectorAll('.close-button');
     const modals = document.querySelectorAll('.modal');
 
     // Fungsi untuk membuka modal
     function openModal(modalElement) {
         if (modalElement == null) return;
-        modalElement.classList.add('active'); // Tambahkan kelas active untuk transisi CSS
-        document.body.style.overflow = 'hidden'; // Mencegah scrolling body saat modal aktif
+        modalElement.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Mencegah scrolling body
     }
 
     // Fungsi untuk menutup modal
     function closeModal(modalElement) {
         if (modalElement == null) return;
-        modalElement.classList.remove('active'); // Hapus kelas active untuk transisi CSS
+        modalElement.classList.remove('active');
         document.body.style.overflow = 'auto'; // Mengembalikan scrolling body
     }
 
-    // Event listener untuk tombol "Selengkapnya"
-    infoButtons.forEach(button => {
+    // Event listener untuk SEMUA tombol modal (Info dan Dokumentasi)
+    modalButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const modalTargetId = button.dataset.modalTarget; // Ambil ID modal dari data-modal-target
+            const modalTargetId = button.dataset.modalTarget;
             const modal = document.getElementById(modalTargetId);
             openModal(modal);
         });
@@ -85,15 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener untuk tombol tutup 'x'
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const modal = button.closest('.modal'); // Cari elemen modal terdekat
+            const modal = button.closest('.modal');
             closeModal(modal);
         });
     });
 
-    // Event listener untuk menutup modal saat mengklik di luar konten modal
+    // Event listener untuk menutup modal saat mengklik di luar konten
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
-            // Jika yang diklik adalah area overlay modal (bukan modal-content)
             if (e.target.classList.contains('modal')) {
                 closeModal(modal);
             }
