@@ -108,13 +108,34 @@ p.penjelasan strong {
    ======================================== */
 .kategori-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding-bottom: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* 1. Paksa tetap satu baris */
+    flex-wrap: nowrap; 
+    
+    /* 2. Aktifkan scroll horizontal */
+    overflow-x: auto; 
+    
+    /* 3. (Opsional) Sembunyikan scrollbar bawaan */
+    -ms-overflow-style: none;  /* IE dan Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+/* 3. (Opsional) Sembunyikan scrollbar untuk Chrome, Safari, Opera */
+.kategori-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tambahkan ini di style.css */
+.kategori-container.active-drag {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.kategori-container {
+    /* ...properti lain... */
+    cursor: grab; /* Kursor tangan saat idle */
+}
+
+
 
 .kategori-kartu {
     background-color: var(--color-card-bg);
@@ -322,24 +343,62 @@ p.penjelasan strong {
 
 /* GAYA TOMBOL DI DALAM MODAL DOKUMENTASI */
 .doc-link-button {
-    display: block;
-    margin: 20px 0 10px 0;
-    padding: 15px;
+    display: flex; /* Menggunakan flexbox untuk ikon + teks */
+    align-items: center;
+    margin: 15px 0; /* Jarak standar baru */
+    padding: 16px 20px;
     background-color: var(--color-secondary-dark);
     border: 1px solid var(--color-border);
-    color: var(--color-accent-blue);
-    text-align: center;
-    border-radius: 6px;
+    border-left: 5px solid var(--color-accent-orange); /* Sorotan profesional di kiri */
+    color: var(--color-text-light); /* Teks lebih cerah agar mudah dibaca */
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1em;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-size: 1.05em;
+    text-align: left; /* Tidak lagi center karena ada ikon */
+    transition: all 0.2s ease; /* Transisi untuk semua properti */
 }
 
+/* GANTI GAYA .doc-link-button:hover LAMA ANDA DENGAN INI */
 .doc-link-button:hover {
     background-color: var(--color-primary-dark);
-    color: var(--color-text-light);
-    transform: scale(1.02);
+    color: var(--color-accent-blue);
+    border-left-color: var(--color-accent-blue); /* Ubah warna sorotan saat hover */
+    transform: scale(1.02) translateX(5px); /* Efek hover yang lebih dinamis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* == TAMBAHKAN GAYA BARU DI BAWAH INI == */
+
+/* 1. CSS untuk Ikon Dinamis */
+.doc-link-button::before {
+    font-size: 1.2em;
+    margin-right: 15px;
+    color: var(--color-accent-blue);
+}
+
+/* Tampilkan ikon dokumen jika link berisi "sko.dev" atau "referensi" */
+.doc-link-button[href*="sko.dev"]::before,
+.doc-link-button[href*="referensi"]::before,
+.doc-link-button[href*="bookdown"]::before,
+.doc-link-button[href*="w3schools"]::before,
+.doc-link-button[href*="fileformat"]::before,
+.doc-link-button[href*="dart.dev"]::before {
+    content: '📄'; /* Ikon Dokumen */
+}
+
+/* Tampilkan ikon video jika link berisi "youtube.com" */
+.doc-link-button[href*="youtube.com"]::before {
+    content: '▶️'; /* Ikon Video/Play */
+}
+
+.doc-link-button[href*="docs.google.com"]::before {
+    content: '⌨️'; /* Ikon Video/Play */
+}
+
+/* 2. CSS untuk Jarak Otomatis (Permintaan ke-2 Anda) */
+.doc-link-button:nth-child(3n) {
+    margin-bottom: 35px; /* Jarak ekstra (15px standar + 20px tambahan) */
 }
 
 
