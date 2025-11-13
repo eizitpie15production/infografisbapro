@@ -108,34 +108,13 @@ p.penjelasan strong {
    ======================================== */
 .kategori-container {
     display: flex;
-    /* 1. Paksa tetap satu baris */
-    flex-wrap: nowrap; 
-    
-    /* 2. Aktifkan scroll horizontal */
-    overflow-x: auto; 
-    
-    /* 3. (Opsional) Sembunyikan scrollbar bawaan */
-    -ms-overflow-style: none;  /* IE dan Edge */
-    scrollbar-width: none;  /* Firefox */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
-/* 3. (Opsional) Sembunyikan scrollbar untuk Chrome, Safari, Opera */
-.kategori-container::-webkit-scrollbar {
-    display: none;
-}
-
-/* Tambahkan ini di style.css */
-.kategori-container.active-drag {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-}
-
-.kategori-container {
-    /* ...properti lain... */
-    cursor: grab; /* Kursor tangan saat idle */
-}
-
-
 
 .kategori-kartu {
     background-color: var(--color-card-bg);

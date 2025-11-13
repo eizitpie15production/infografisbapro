@@ -94,40 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal(modal);
             }
         });
-		
-	// ------------------------------------------
-// FITUR 4: Draggable Horizontal Scroll
-// ------------------------------------------
-const slider = document.querySelector('.kategori-container');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active-drag'); // (Opsional: untuk ubah cursor)
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active-drag');
-});
-
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active-drag');
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return; // Hentikan jika mouse tidak ditekan
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; // (angka 2 untuk geser lebih cepat)
-    slider.scrollLeft = scrollLeft - walk;
-});
-		
-		
     });
 });
