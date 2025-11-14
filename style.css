@@ -2,17 +2,33 @@
    GLOBAL STYLES & FONT
    ======================================== */
 :root {
-    /* Palette Warna Modern Baru */
-    --color-primary-dark: #121228; /* Sangat gelap, mendekati hitam */
-    --color-secondary-dark: #1F2847; /* Biru gelap keabu-abuan */
-    --color-card-bg: #2B355A; /* Latar belakang kartu yang lebih menonjol */
-    --color-border: #4A5B8A; /* Border yang lebih jelas */
-    --color-text-light: #EAEAEA; /* Teks terang */
+    /* Palette Warna Modern & Profesional */
+    --color-primary-dark: #0A0A1C; /* Latar belakang paling gelap, nuansa ungu/biru laut */
+    --color-secondary-dark: #141434; /* Base background, deep blue */
+    --color-card-bg: #1C1C40; /* Latar belakang kartu yang lebih menonjol */
+    --color-border: #35356E; /* Border yang lebih halus dan dalam */
+    --color-text-light: #F0F0FF; /* Teks terang (putih kebiruan) */
     --color-text-muted: #B0BACC; /* Teks agak pudar */
-    --color-accent-blue: #5AC8FF; /* Biru aksen cerah */
-    --color-accent-orange: #FFAC58; /* Oranye aksen hangat */
-    --color-code-bg: #1A1A32; /* Latar belakang kode lebih gelap */
-    --color-code-text: #A0FFA0; /* Teks kode hijau cerah */
+    --color-accent-blue: #4E89FF; /* Biru aksen yang lebih elektrik & cerah */
+    --color-accent-orange: #FFD700; /* Mengganti oranye dengan Emas/Kuning cerah (kontras tinggi) */
+    --color-code-bg: #0D0D26; /* Latar belakang kode lebih gelap dan bersih */
+    --color-code-text: #00FFAA; /* Teks kode hijau neon modern */
+}
+
+/* ========================================
+   Penyesuaian Lain di CSS (wajib mengikuti perubahan warna di atas)
+   ======================================== */
+/* 1. Ganti gaya BODY untuk transisi yang lebih dalam */
+body {
+    background-image: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+    /* ... (lanjutkan sisa properti body yang lain) ... */
+}
+
+/* 2. Tambahkan efek glow premium pada hover kartu (di bagian .kategori-kartu:hover) */
+.kategori-kartu:hover {
+    transform: translateY(-10px) scale(1.03);
+    /* GANTI box-shadow LAMA dengan yang ini: */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 25px var(--color-accent-blue); 
 }
 
 body {
@@ -29,17 +45,38 @@ body {
 }
 
 /* ========================================
-   HEADINGS & TYPOGRAPHY
+   HEADINGS & TYPOGRAPHY - H1 BARU
    ======================================== */
 h1 {
+    /* 1. Teks Gradient (UI Menarik & Profesional) */
+    background-image: linear-gradient(90deg, var(--color-accent-blue), var(--color-accent-orange));
+    -webkit-background-clip: text; /* Wajib untuk browser berbasis WebKit */
+    background-clip: text;
+    color: transparent; /* Membuat teks berwarna transparan agar gradien terlihat */
+    
+    /* 2. Peningkatan Gaya & Glow */
     text-align: center;
-    color: var(--color-text-light);
-    margin: 40px auto 60px auto;
-    font-weight: 700;
-    font-size: 3em;
+    margin: 40px auto 20px auto; /* Margin diubah untuk memberi ruang pada separator */
+    font-weight: 900; /* Dibuat lebih tebal */
+    font-size: 3.2em; /* Dibuat sedikit lebih besar */
     max-width: 900px;
     line-height: 1.2;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 15px rgba(90, 200, 255, 0.4); /* Efek glow biru ringan */
+    position: relative; 
+    padding-bottom: 30px; /* Memberi ruang di bawah untuk garis pemisah */
+}
+
+/* 3. Garis Separator Bawah (Pseudo-element) */
+h1::after {
+    content: '';
+    display: block;
+    width: 150px; /* Lebar garis */
+    height: 4px; /* Ketebalan garis */
+    background-color: var(--color-accent-blue);
+    margin: 20px auto 0 auto;
+    border-radius: 2px;
+    /* Efek glow agar terlihat profesional di latar belakang gelap */
+    box-shadow: 0 0 10px var(--color-accent-blue), 0 0 20px rgba(90, 200, 255, 0.8);
 }
 
 h2 {
@@ -65,26 +102,31 @@ ul {
     padding-left: 0;
 }
 
+/* ========================================
+   GANTI: LIST ITEMS (HIERARKI BARU)
+   ======================================== */
 li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 20px;
     margin-bottom: 12px;
-    color: var(--color-text-muted);
-}
-
-li::before {
-    content: '▶';
-    color: var(--color-accent-blue);
-    position: absolute;
-    left: 0;
-    font-size: 0.8em;
+    color: var(--color-text-muted); /* Deskripsi tetap muted */
     line-height: 1.6;
 }
 
+li::before {
+    content: '•'; /* Mengganti panah dengan titik solid untuk tampilan modern */
+    color: var(--color-accent-orange); /* Menggunakan warna aksen oranye */
+    position: absolute;
+    left: 0;
+    font-size: 1.5em; 
+    line-height: 0.9; 
+    top: 3px; 
+}
+
 li strong {
-    color: var(--color-text-light);
-    display: block;
-    margin-bottom: 3px;
+    color: var(--color-accent-blue); /* Gunakan warna biru untuk nama bahasa agar menonjol */
+    display: inline; 
+    margin-bottom: 0;
     font-size: 1.1em;
     font-weight: 700;
 }
@@ -114,6 +156,14 @@ p.penjelasan strong {
     padding-bottom: 50px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.kategori-container.spotlight .kategori-kartu:not(:hover) {
+    opacity: 0.5; /* Kurangi opacity kartu yang tidak fokus */
+}
+
+.kategori-container.spotlight .kategori-kartu:hover {
+    opacity: 1; /* Pastikan kartu yang fokus tetap terang */
 }
 
 .kategori-kartu {
@@ -148,6 +198,36 @@ p.penjelasan strong {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
 }
+
+/* ========================================
+   FITUR BARU: PROGRESS TRACKING (COMPLETED STATE)
+   ======================================== */
+.kategori-kartu.completed {
+    /* Mengubah warna border menjadi aksen untuk menandai penyelesaian */
+    border: 2px solid var(--color-accent-orange); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 10px var(--color-accent-orange); /* Efek glow halus */
+    opacity: 0.95; 
+}
+
+/* Badge checkmark di pojok kanan atas kartu */
+.kategori-kartu.completed::before {
+    content: '✅';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    z-index: 10;
+    opacity: 0.9;
+    /* Memberi sedikit animasi agar terlihat menarik */
+    animation: pulse 1s infinite alternate; 
+}
+
+/* Kunci animasi (tempatkan di bagian manapun di CSS) */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
 
 /* ========================================
    KODE BLOK
@@ -221,6 +301,16 @@ p.penjelasan strong {
     color: var(--color-primary-dark);
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   TAMBAHKAN: EFEK TEKAN PADA TOMBOL (UX)
+   ======================================== */
+.info-button:active, .doc-button:active {
+    /* Mencegah transform hover, memberikan efek tombol ditekan ke dalam */
+    transform: translateY(0px) scale(0.98); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Bayangan lebih kecil saat ditekan */
+    transition: all 0.1s ease-out; /* Transisi cepat saat ditekan */
 }
 
 
@@ -411,6 +501,45 @@ p.penjelasan strong {
     color: var(--color-accent-orange);
     text-decoration: underline;
 }
+
+/* ========================================
+   TOMBOL KEMBALI KE ATAS
+   ======================================== */
+#tombol-ke-atas {
+    display: none; /* Sembunyi secara default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    background-color: var(--color-accent-blue);
+    color: var(--color-primary-dark);
+    border: none;
+    border-radius: 50%; /* Membuatnya bulat */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px; /* Menengahkan panah secara vertikal */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0; /* Mulai transparan */
+    transform: translateY(20px); /* Mulai dari bawah */
+}
+
+/* Kelas 'show' ini yang akan ditambahkan oleh JavaScript */
+#tombol-ke-atas.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#tombol-ke-atas:hover {
+    background-color: var(--color-accent-orange);
+    color: var(--color-primary-dark);
+    transform: scale(1.1);
+}
+
 
 /* ========================================
    RESPONSIVE DESIGN
