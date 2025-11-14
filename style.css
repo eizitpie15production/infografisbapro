@@ -610,3 +610,56 @@ p.penjelasan strong {
         right: 15px;
     }
 }
+
+/* ========================================
+   GAYA UNTUK NAVIGASI TAB MODAL
+   ======================================== */
+
+/* 1. Menata tombol (Kotlin, Swift, Dart) agar horizontal */
+.modal-nav-kategori {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 15px;
+}
+
+/* 2. Menata gaya tombol navigasi */
+.nav-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text-muted);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
+}
+
+/* 3. Gaya untuk tombol navigasi yang AKTIF */
+.nav-button.active {
+    background-color: var(--color-accent-blue);
+    color: var(--color-primary-dark);
+    border-color: var(--color-accent-blue);
+}
+
+/* ========================================
+   LOGIKA PENTING UNTUK MENYEMBUNYIKAN KONTEN
+   ======================================== */
+
+/* 4. Sembunyikan SEMUA wadah link secara default */
+.links-container {
+    display: none;
+}
+
+/* 5. Tampilkan HANYA wadah yang memiliki kelas .active */
+.links-container.active {
+    display: block;
+}

@@ -41,7 +41,7 @@ console.log("Hello, World!");
         </div>
 
         <div class="kategori-kartu" id="data-science">
-            <h2>2. Data Science & AI 🧠</h2>
+            <h2>2. Data Science/Analisis <br>& AI 🧠</h2>
             <ul>
                 <li><strong>Python:</strong> Analisis Data & Machine Learning (ML)</li>
                 <li><strong>R:</strong> Pemodelan Statistik & Visualisasi</li>
@@ -177,7 +177,7 @@ func main() {
     <div id="modal-data-science" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Data Science & AI 🧠</h2>
+            <h2>Data Science/Analisis & AI 🧠</h2>
             <p>Data Science adalah bidang interdisipliner yang menggunakan metode ilmiah, proses, algoritma, dan sistem untuk mengekstrak pengetahuan dan wawasan dari data dalam berbagai bentuk. AI melibatkan pembuatan mesin yang dapat berpikir dan belajar seperti manusia. Python dan R adalah pilihan utama untuk analisis, visualisasi, dan pembangunan model Machine Learning.</p>
             <h3>Library / Tools Populer:</h3>
             <ul>
@@ -245,12 +245,19 @@ func main() {
     </div>
 
 
+
     <div id="modal-doc-frontend" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Dokumentasi Web Development 🌐</h2>
-            <p>Berikut adalah beberapa referensi eksternal yang sangat berguna untuk mempelajari lebih lanjut tentang HTML, CSS, dan JavaScript dari Skodev.</p>
-            
+        <span class="close-button">&times;</span>
+        <h2>Dokumentasi Web Development 🌐</h2>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari HTML, CSS, dan JAVASCRIPT, tiga pilar utama dalam Web Development.</p>
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-html">HTML</button>
+            <button class="nav-button" data-target="links-css">CSS</button>
+            <button class="nav-button" data-target="links-javascript">JAVASCRIPT</button>
+        </div>
+
+        <div id="links-html" class="links-container active">
             <a href="https://sko.dev/referensi/html/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
                 Dokumentasi HTML - Skodev
             </a>
@@ -261,7 +268,9 @@ func main() {
                 Belajar HTML + Praktek Langsung disini !
             </a>
 			
-			
+            </div>
+
+        <div id="links-css" class="links-container">
             <a href="https://sko.dev/referensi/css/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
                 Dokumentasi CSS - Skodev
             </a>
@@ -272,7 +281,9 @@ func main() {
                 Belajar CSS + Praktek Langsung disini !
             </a>
 			
-			
+            </div>
+
+        <div id="links-javascript" class="links-container">
             <a href="https://sko.dev/referensi/javascript/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
                 Referensi Javascript - Skodev
             </a>
@@ -283,68 +294,283 @@ func main() {
                 Belajar JAVASCRIPT + Praktek Langsung disini !
             </a>
 			
-        </div>
-    </div>
-
-    <div id="modal-doc-data-science" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Dokumentasi Data Science & AI 🧠</h2>
-        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari Python, R, dan SQL, tiga pilar utama dalam Data Science.</p>
-        
-        <a href="https://sko.dev/referensi/python/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi Python - Skodev
-        </a>
-        <a href="https://bookdown.org/moh_rosidi2610/Metode_Numerik/intro.html" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi Bapro R - bookdown
-        </a>
-        <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi SQL - w3schools
-        </a>
+		</div>
     </div>
 </div>
+
+
+
+<div id="modal-doc-data-science" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Dokumentasi Data Science/Analisis & AI 🧠</h2>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari Python, R, dan SQL, tiga pilar utama dalam Data Science/Analisis.</p>
+
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-phyton">Python</button>
+            <button class="nav-button" data-target="links-r">R</button>
+            <button class="nav-button" data-target="links-sql">SQL</button>
+        </div>
+
+        <div id="links-phyton" class="links-container active">
+            <a href="https://sko.dev/referensi/python/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+				Dokumentasi Python - Skodev
+			</a>
+			<a href="https://www.youtube.com/watch?v=tfruzm-HK1Q&list=PLt1EwfOLOybivtCNs-baAIwFLfleH-OG5" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Python Sampai Mahir di Data Analisis
+            </a>
+			<a href="https://docs.google.com/document/d" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Phyton + Praktek Langsung disini !
+            </a>
+            </div>
+
+        <div id="links-r" class="links-container">
+            <a href="https://bookdown.org/moh_rosidi2610/Metode_Numerik/intro.html" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+				Dokumentasi Bapro R - bookdown
+			</a>
+			<a href="https://www.youtube.com/watch?v=ZZr8KFoeX8Y&list=PL7TeU9V9_9pJmPOIF2ORzcueTF50krW5G" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Bahasa R Sampai Mahir di Data Analisis
+            </a>
+			<a href="https://docs.google.com/document/d" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Bapro R + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-sql" class="links-container">
+            <a href="https://www.w3schools.com/sql/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+				Dokumentasi SQL - w3schools
+			</a>
+			<a href="https://www.youtube.com/watch?v=obUM6EgxL7Y&list=PLMHQwAeYadijt60QAppGYE_aB4HIybvkD" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar SQL Sampai Mahir di Data Analisis
+            </a>
+			<a href="https://docs.google.com/document/d" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar SQL + Praktek Langsung disini !
+            </a>
+		</div>
+    </div>
+</div>
+
+
+
 
     <div id="modal-doc-mobile" class="modal">
     <div class="modal-content">
         <span class="close-button">&times;</span>
         <h2>Dokumentasi Aplikasi Mobile 📱</h2>
-        <p>Berikut adalah referensi untuk mempelajari bahasa-bahasa utama yang digunakan dalam pengembangan aplikasi mobile native dan cross-platform.</p>
-        
-        <a href="https://app.sko.dev/archived/kelas/belajar-kotlin-dari-dasar" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi Kotlin - Skodev
-        </a>
-        <a href="https://docs.fileformat.com/id/programming/swift/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi Swift - fileformat
-        </a>
-        <a href="https://dart.dev/language" target="_blank" rel="noopener noreferrer" class="doc-link-button">
-            Dokumentasi Dart (Flutter) - dart.dev
-        </a>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari Kotlin, Swift, dan Dart (Flutter), tiga pilar utama dalam Aplikasi Mobile.</p>
+
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-kotlin">Kotlin</button>
+            <button class="nav-button" data-target="links-swift">Swift</button>
+            <button class="nav-button" data-target="links-dart">Dart (Flutter)</button>
+        </div>
+
+        <div id="links-kotlin" class="links-container active">
+            <a href="https://app.sko.dev/archived/kelas/belajar-kotlin-dari-dasar" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Kotlin - Skodev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Kotlin Sampai Mahir di Aplikasi Mobile
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Kotlin + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-swift" class="links-container">
+            <a href="https://docs.fileformat.com/id/programming/swift/" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Swift - fileformat
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Swift Sampai Mahir di Aplikasi Mobile
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Swift + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-dart" class="links-container">
+            <a href="https://dart.dev/language" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Dart (Flutter) - dart.dev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Dart (Flutter) Sampai Mahir di Aplikasi Mobile
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Dart (Flutter) + Praktek Langsung disini !
+            </a>
+			
+            </div>
     </div>
 </div>
 
-    <div id="modal-doc-game" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Dokumentasi Game Development 🎮</h2>
-            <p>Dokumentasi untuk kategori ini belum ditambahkan.</p>
-        </div>
-    </div>
 
-    <div id="modal-doc-sistem" class="modal">
+<div id="modal-doc-game" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Dokumentasi Pemrograman Sistem ⚙️</h2>
-            <p>Dokumentasi untuk kategori ini belum ditambahkan.</p>
-        </div>
-    </div>
+        <span class="close-button">&times;</span>
+        <h2>Game Development & Kinerja 🎮</h2>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari C++, C#, dan LUA, tiga pilar utama dalam Game Development & Kinerja.</p>
 
-    <div id="modal-doc-enterprise" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Dokumentasi Enterprise & Backend 🏦</h2>
-            <p>Dokumentasi untuk kategori ini belum ditambahkan.</p>
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-c++">C++</button>
+            <button class="nav-button" data-target="links-c#">C#</button>
+            <button class="nav-button" data-target="links-lua">LUA</button>
         </div>
+
+        <div id="links-c++" class="links-container active">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi C++ - Skodev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar C++ Sampai Mahir di Game Development & Kinerja
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar C++ + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-c#" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi C# - fileformat
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar C# Sampai Mahir di Game Development & Kinerja
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar C# + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-lua" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi LUA - dart.dev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar LUA Sampai Mahir di Game Development & Kinerja
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar LUA + Praktek Langsung disini !
+            </a>
+			
+            </div>
     </div>
+</div>
+
+
+<div id="modal-doc-sistem" class="modal">
+        <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Pemrograman Sistem & Hardware ⚙️</h2>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari C, Rust, dan Assembly, tiga pilar utama dalam Pemrograman Sistem & Hardware.</p>
+
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-c">C</button>
+            <button class="nav-button" data-target="links-rust">Rust</button>
+            <button class="nav-button" data-target="links-assembly">Assembly</button>
+        </div>
+
+        <div id="links-c" class="links-container active">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi C - Skodev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar C Sampai Mahir di Pemrograman Sistem & Hardware
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar C + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-rust" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Rust - fileformat
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Rust Sampai Mahir di Pemrograman Sistem & Hardware
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Rust + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-assembly" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Assembly - dart.dev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Assembly Sampai Mahir di Pemrograman Sistem & Hardware
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Assembly + Praktek Langsung disini !
+            </a>
+			
+            </div>
+    </div>
+</div>
+
+
+
+<div id="modal-doc-enterprise" class="modal">
+        <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Enterprise & Backend Skala Besar 🏦</h2>
+        <p>Berikut adalah beberapa referensi eksternal yang berguna untuk mempelajari Java, Golang, dan PHP, tiga pilar utama dalam Enterprise & Backend Skala Besar.</p>
+
+        <div class="modal-nav-kategori">
+            <button class="nav-button active" data-target="links-java">Java</button>
+            <button class="nav-button" data-target="links-golang">Go (Golang)</button>
+            <button class="nav-button" data-target="links-php">PHP</button>
+        </div>
+
+        <div id="links-java" class="links-container active">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Java - Skodev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Java Sampai Mahir di Enterprise & Backend Skala Besar
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Java + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-golang" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi Golang - fileformat
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar Golang Sampai Mahir di Enterprise & Backend Skala Besar
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar Golang + Praktek Langsung disini !
+            </a>
+			
+            </div>
+
+        <div id="links-php" class="links-container">
+            <a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Dokumentasi PHP - dart.dev
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Playlist Video Belajar PHP Sampai Mahir di Enterprise & Backend Skala Besar
+            </a>
+			<a href="" target="_blank" rel="noopener noreferrer" class="doc-link-button">
+                Belajar PHP + Praktek Langsung disini !
+            </a>
+			
+            </div>
+    </div>
+</div>
+
+
 
 
     <footer class="site-footer">

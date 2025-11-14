@@ -166,3 +166,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// ------------------------------------------
+// FITUR: Navigasi Tab di dalam Modal
+// (Kode ini menangani SEMUA modal, termasuk Data Science & Mobile)
+// ------------------------------------------
+const modalNavContainers = document.querySelectorAll('.modal-nav-kategori');
+
+modalNavContainers.forEach(navContainer => {
+    navContainer.addEventListener('click', (e) => {
+        // Pastikan kita mengklik tombol, bukan area kosong
+        if (!e.target.classList.contains('nav-button')) return;
+
+        const clickedButton = e.target;
+        const targetId = clickedButton.dataset.target; // Ambil "links-swift"
+        const targetContent = document.getElementById(targetId);
+
+        // 1. Nonaktifkan semua tombol di grup ini
+        navContainer.querySelectorAll('.nav-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // 2. Aktifkan tombol yang diklik
+        clickedButton.classList.add('active');
+
+        // 3. Sembunyikan semua konten di modal ini
+        const modalContent = navContainer.closest('.modal-content');
+        modalContent.querySelectorAll('.links-container').forEach(container => {
+            container.classList.remove('active');
+        });
+
+        // 4. Tampilkan konten yang dituju
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+    });
+});
