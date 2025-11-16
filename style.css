@@ -453,6 +453,9 @@ p.penjelasan strong {
 .doc-link-button[href*="w3schools"]::before,
 .doc-link-button[href*="fileformat"]::before,
 .doc-link-button[href*="microsoft"]::before,
+.doc-link-button[href*="slideshare"]::before,
+.doc-link-button[href*="petanikode"]::before,
+.doc-link-button[href*="dasarpemrogramangolang"]::before,
 .doc-link-button[href*="dart.dev"]::before {
     content: '📄'; /* Ikon Dokumen */
 }
